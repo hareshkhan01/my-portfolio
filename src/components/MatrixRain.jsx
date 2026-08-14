@@ -4,61 +4,133 @@ const MatrixRain = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    // Respect reduced motion preference
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (prefersReducedMotion) return;
-
     const canvas = canvasRef.current;
+    if (!canvas) return;
+
     const ctx = canvas.getContext("2d");
 
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resize();
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion) return;
 
     const chars =
       "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
     const fontSize = 14;
-    const columns = Math.floor(canvas.width / fontSize);
-    const drops = new Array(columns).fill(1);
+    const trailLength = 12;
 
-    // Randomize initial drop positions for a natural look
-    for (let i = 0; i < drops.length; i++) {
-      drops[i] = Math.random() * (canvas.height / fontSize);
-    }
+    let columns = 0;
+    let drops = [];
+    let speeds = [];
+    let lengths = [];
+    let animationId;
 
-    let animId;
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      columns = Math.ceil(window.innerWidth / fontSize);
+
+      drops = Array.from(
+        { length: columns },
+        () => Math.random() * (window.innerHeight / fontSize)
+      );
+
+      speeds = Array.from(
+        { length: columns },
+        () => Math.random() * 0.7 + 0.25
+      );
+
+      lengths = Array.from(
+        { length: columns },
+        () => Math.floor(Math.random() * trailLength) + 5
+      );
+
+      ctx.clearRect(
+        0,
+        0,
+        window.innerWidth,
+        window.innerHeight
+      );
+    };
+
+    resize();
 
     const draw = () => {
-      ctx.fillStyle = "rgba(3, 6, 3, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Fade previous frames to create trails
+      ctx.fillStyle = "rgba(3, 6, 3, 0.10)";
+      ctx.fillRect(
+        0,
+        0,
+        window.innerWidth,
+        window.innerHeight
+      );
 
-      ctx.fillStyle = "#39ff14";
       ctx.font = `${fontSize}px monospace`;
+      ctx.textAlign = "center";
 
-      for (let i = 0; i < drops.length; i++) {
-        // Only draw ~60% of columns per frame for performance
-        if (Math.random() > 0.6) continue;
+      for (let i = 0; i < columns; i++) {
+        const headY = drops[i];
 
-        const text = chars[Math.floor(Math.random() * chars.length)];
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
+        // Draw the trail behind the leading character
+        for (let j = 0; j < lengths[i]; j++) {
+          const y = (headY - j) * fontSize;
 
-        // Vary opacity for depth
-        ctx.globalAlpha = Math.random() * 0.3 + 0.1;
-        ctx.fillText(text, x, y);
+          if (y < 0 || y > window.innerHeight) continue;
+
+          const char =
+            chars[Math.floor(Math.random() * chars.length)];
+
+          const x = i * fontSize + fontSize / 2;
+
+          // Leading character is brightest
+          if (j === 0) {
+            ctx.globalAlpha = 0.9;
+
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = "#39ff14";
+
+            ctx.fillStyle = "#d7ffd0";
+          } else {
+            // Trail gradually fades
+            ctx.globalAlpha =
+              Math.max(0, 0.35 - j * 0.025);
+
+            ctx.shadowBlur = 0;
+            ctx.fillStyle = "#39ff14";
+          }
+
+          ctx.fillText(char, x, y);
+        }
+
+        ctx.shadowBlur = 0;
         ctx.globalAlpha = 1;
 
-        if (y > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+        // Move the stream
+        drops[i] += speeds[i];
+
+        // Restart stream after it leaves the screen
+        if (
+          drops[i] * fontSize >
+          window.innerHeight + lengths[i] * fontSize &&
+          Math.random() > 0.975
+        ) {
+          drops[i] =
+            -Math.random() *
+            (window.innerHeight / fontSize);
         }
-        drops[i]++;
       }
 
-      animId = requestAnimationFrame(draw);
+      animationId = requestAnimationFrame(draw);
     };
 
     draw();
@@ -66,7 +138,7 @@ const MatrixRain = () => {
     window.addEventListener("resize", resize);
 
     return () => {
-      cancelAnimationFrame(animId);
+      cancelAnimationFrame(animationId);
       window.removeEventListener("resize", resize);
     };
   }, []);
@@ -75,7 +147,10 @@ const MatrixRain = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 0, opacity: 0.4 }}
+      style={{
+        zIndex: 0,
+        opacity: 0.3,
+      }}
       aria-hidden="true"
     />
   );
