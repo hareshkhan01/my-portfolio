@@ -141,20 +141,20 @@ export const contactInfo = {
   heading: "LET'S BUILD SOMETHING",
   headingAccent: "AMAZING TOGETHER.",
   details: [
-    { icon: FiMail, label: "Email", value: "hareshkhan@example.com" },
-    { icon: FiPhone, label: "Phone", value: "+91 12345 67890" },
-    { icon: FiMapPin, label: "Location", value: "Kolkata, India" },
+    { icon: FiMail, label: "Email", value: "hareshkhan060@gmail.com" },
+    { icon: FiPhone, label: "Phone", value: "+91 8967740629" },
+    { icon: FiMapPin, label: "Location", value: "Kolkata, West Bengal, India" },
     {
       icon: FiGithub,
       label: "GitHub",
-      value: "github.com/hareshkhan",
-      href: "YOUR_GITHUB_URL",
+      value: "github.com/hareshkhan01",
+      href: "https://github.com/hareshkhan01",
     },
     {
       icon: FiLinkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/hareshkhan",
-      href: "YOUR_LINKEDIN_URL",
+      value: "linkedin.com/in/haresh-khan-481451331/",
+      href: "https://www.linkedin.com/in/haresh-khan-481451331/",
     },
   ],
 };

@@ -12,8 +12,8 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex flex-col relative overflow-hidden">
-      {/* Top Navigation Bar (desktop only) */}
-      <div className="hidden lg:flex items-center justify-center gap-1 py-3 border-b border-matrix-border text-[10px] tracking-widest text-matrix-text-muted">
+      {/* Top Navigation Bar (desktop only) + Quote */}
+      <div className="hidden lg:flex items-center justify-center gap-1 py-3 border-b border-matrix-border text-[10px] tracking-widest text-matrix-text-muted relative">
         <span className="text-matrix-border">[</span>
         {navItems.map((item, i) => (
           <span key={item.id}>
@@ -24,13 +24,17 @@ const Hero = () => {
           </span>
         ))}
         <span className="text-matrix-border">]</span>
-      </div>
 
-      {/* Decorative top-right quote */}
-      <div className="hidden md:block absolute top-5 right-6 text-right">
-        <p className="text-[10px] text-matrix-text-muted tracking-wider leading-relaxed">
-          &gt; WHO LOOKS OUTSIDE, DREAMS<br />WHO LOOKS INSIDE, AWAKES.
-        </p>
+        {/* Quote straddling the border line */}
+        <div className="absolute right-6 top-1/2 -translate-y-1/2 text-right flex flex-col items-end">
+          <p className="text-[10px] text-matrix-text-muted tracking-wider leading-none mb-1.5">
+            &gt; WHO LOOKS OUTSIDE, DREAMS
+          </p>
+          <div className="w-full h-px bg-matrix-border my-0" />
+          <p className="text-[10px] text-matrix-text-muted tracking-wider leading-none mt-1.5">
+            WHO LOOKS INSIDE, AWAKES.
+          </p>
+        </div>
       </div>
 
       {/* Hero Content */}
