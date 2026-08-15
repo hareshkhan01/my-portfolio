@@ -4,9 +4,9 @@ import { personalInfo } from "../data/portfolio";
 const Footer = () => (
   <footer className="border-t border-matrix-border py-6 px-4 md:px-8">
     <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <div className="flex items-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-matrix-primary" />
-        <span className="text-[10px] text-matrix-text-muted tracking-widest uppercase">SYSTEM STATUS 100%</span>
+      <div className="flex flex-col gap-0.5">
+        <span className="text-[10px] text-matrix-text-muted tracking-widest">&gt; SYSTEM STATUS: ONLINE</span>
+        <span className="text-[10px] text-matrix-text-muted tracking-widest">&gt; CONNECTION CLOSED.</span>
       </div>
       <div className="flex items-center gap-4">
         <a href={personalInfo.social.github} target="_blank" rel="noopener noreferrer" className="text-matrix-muted hover:text-matrix-primary transition-colors" aria-label="GitHub"><FiGithub size={14} /></a>

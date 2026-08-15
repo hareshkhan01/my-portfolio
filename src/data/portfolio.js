@@ -42,11 +42,11 @@ export const personalInfo = {
   subtitle: "Hi, I'm Haresh Khan",
   initializingText: "> INITIALIZING PORTFOLIO...",
   social: {
-    github: "YOUR_GITHUB_URL",
-    linkedin: "YOUR_LINKEDIN_URL",
-    email: "YOUR_EMAIL",
+    github: "https://github.com/hareshkhan0",
+    linkedin: "https://www.linkedin.com/in/haresh-khan-481451331/",
+    email: "hareshkhan060@gmail.com",
   },
-  resumeUrl: "#",
+  resumeUrl: "https://drive.google.com/file/d/15RTBIExe50bfZf8Q67Fk_vPa5ZzC1RVx/view?usp=drive_link",
 };
 
 export const aboutData = {

@@ -149,7 +149,7 @@ const MatrixRain = () => {
       className="fixed inset-0 pointer-events-none"
       style={{
         zIndex: 0,
-        opacity: 0.3,
+        opacity: 0.16,
       }}
       aria-hidden="true"
     />

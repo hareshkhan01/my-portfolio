@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { aboutData } from "../data/portfolio";
-import heroImg from "../assets/hero-cyberpunk.png";
+import heroImg from "../assets/my-matrix-image.png";
 
 const About = () => {
   return (
@@ -22,7 +22,7 @@ const About = () => {
               <img
                 src={heroImg}
                 alt="Developer portrait"
-                className="w-full h-full object-cover opacity-70"
+                className="w-full h-full object-cover "
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-matrix-bg/60 via-transparent to-transparent" />

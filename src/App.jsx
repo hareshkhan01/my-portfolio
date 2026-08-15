@@ -1,5 +1,5 @@
 import MatrixRain from "./components/MatrixRain";
-import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
 import MobileNav from "./components/MobileNav";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -11,16 +11,18 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="scanlines grid-bg">
+    <div className="scanlines grid-bg w-full min-h-screen">
       {/* Matrix Rain Background */}
       <MatrixRain />
 
-      {/* Navigation */}
-      <Sidebar />
+      {/* Mobile Navigation */}
       <MobileNav />
 
       {/* Main Content */}
-      <main className="flex-1 lg:ml-56 xl:ml-64 relative z-10 pt-12 lg:pt-0">
+      <main className="flex-1 relative z-10 pt-12 lg:pt-0">
+        {/* Desktop Sticky Navbar */}
+        <Navbar />
+
         <Hero />
         <About />
         <Skills />
