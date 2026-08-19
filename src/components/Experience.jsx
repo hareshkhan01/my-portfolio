@@ -13,7 +13,7 @@ const Experience = () => {
             <div className="relative">
               <div className="absolute left-[7px] top-2 bottom-2 w-px bg-matrix-border" />
               <div className="space-y-8">
-                {experience.map((item, index) => (
+                {/* {experience.map((item, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
@@ -32,7 +32,8 @@ const Experience = () => {
                       <p className="text-[11px] md:text-xs text-matrix-text-muted mt-1 leading-relaxed">{item.description}</p>
                     </div>
                   </motion.div>
-                ))}
+                ))} */}
+                <p>Blah Blah Balh</p>
               </div>
             </div>
           </div>
