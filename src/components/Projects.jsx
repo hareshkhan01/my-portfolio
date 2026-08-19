@@ -13,6 +13,9 @@ const Projects = () => (
           <motion.div key={project.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ delay: index * 0.1, duration: 0.5 }}>
             <TerminalWindow title={`${project.id}.exe`}>
               <div className="space-y-3">
+                {project.highlight && (
+                  <p className="text-[9px] text-matrix-secondary tracking-widest uppercase">&gt; {project.highlight}</p>
+                )}
                 <h3 className="text-sm md:text-base text-matrix-text font-bold">{project.title}</h3>
                 <p className="text-[11px] md:text-xs text-matrix-text-muted leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-1.5 pt-1">

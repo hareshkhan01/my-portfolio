@@ -15,6 +15,7 @@ import {
   FiCoffee,
   FiTerminal,
   FiLayers,
+  FiBookOpen,
 } from "react-icons/fi";
 
 import {
@@ -28,6 +29,9 @@ import {
   SiGit,
   SiPython,
   SiSpringboot,
+  SiExpress,
+  SiPostgresql,
+  SiMysql,
 } from "react-icons/si";
 
 import { FaJava, FaAndroid } from "react-icons/fa";
@@ -35,14 +39,14 @@ import { FaCss3 } from "react-icons/fa6";
 
 export const personalInfo = {
   name: "Haresh Khan",
-  title: "Software Developer",
+  title: "Full Stack Developer",
   tagline: "I DON'T USE",
   taglineAccent: "TECHNOLOGY.",
   taglineEnd: "I UNDERSTAND IT.",
   subtitle: "Hi, I'm Haresh Khan",
   initializingText: "> INITIALIZING PORTFOLIO...",
   social: {
-    github: "https://github.com/hareshkhan0",
+    github: "https://github.com/hareshkhan01",
     linkedin: "https://www.linkedin.com/in/haresh-khan-481451331/",
     email: "hareshkhan060@gmail.com",
   },
@@ -53,15 +57,15 @@ export const aboutData = {
   heading: "I BUILD SOLUTIONS.",
   headingAccent: "NOT JUST CODE.",
   bio: [
-    "Passionate Full Stack Developer who loves building scalable, efficient and futuristic web applications.",
-    "I enjoy turning complex problems into simple, beautiful and intuitive solutions.",
-    'When I\'m not coding, I love to cook, play games and explore tech.',
+    "Full Stack Developer with experience in building both frontend and backend parts of web applications. I've worked with HTML, CSS, JavaScript, and React on the frontend, and Node.js, Express, and Java with Spring Boot on the backend.",
+    "I enjoy solving real-world problems through code and always try to write clean, maintainable solutions. Comfortable working in a team, using Git, and following agile practices.",
+    "When I'm not coding, I love to cook, play games and explore new tech.",
   ],
   terminalPrompt: 'C:\\> echo "Stay curious, keep building.."',
   infoCards: [
-    { icon: FiMapPin, label: "LOCATION", value: "India" },
-    { icon: FiCalendar, label: "BIRTHDAY", value: "18 October 2001" },
-    { icon: FiCode, label: "LANGUAGES", value: "Java, JavaScript, Python" },
+    { icon: FiMapPin, label: "LOCATION", value: "Kolkata, West Bengal, India" },
+    { icon: FiCalendar, label: "BIRTHDAY", value: "12 September 2003" },
+    { icon: FiCode, label: "LANGUAGES", value: "Java, JavaScript, SQL, HTML/CSS" },
     { icon: FiCoffee, label: "CURRENT FOCUS", value: "Building cool products" },
     { icon: FiTerminal, label: "STATUS", value: "Always learning..." },
   ],
@@ -71,71 +75,82 @@ export const skills = [
   { name: "HTML5", icon: SiHtml5 },
   { name: "CSS3", icon: FaCss3 },
   { name: "JavaScript", icon: SiJavascript },
+  { name: "Java", icon: FaJava },
   { name: "React", icon: SiReact },
-  { name: "Next.js", icon: SiNextdotjs },
   { name: "Node.js", icon: SiNodedotjs },
+  { name: "Express.js", icon: SiExpress },
+  { name: "Spring Boot", icon: SiSpringboot },
   { name: "MongoDB", icon: SiMongodb },
+  { name: "MySQL", icon: SiMysql },
+  { name: "PostgreSQL", icon: SiPostgresql },
   { name: "TailwindCSS", icon: SiTailwindcss },
   { name: "Git", icon: SiGit },
   { name: "Python", icon: SiPython },
-  { name: "Java", icon: FaJava },
-  { name: "Spring Boot", icon: SiSpringboot },
   { name: "Android", icon: FaAndroid },
 ];
 
 export const projects = [
   {
     id: "project_01",
-    title: "AI Expense Tracker",
+    title: "KisanMandi",
     description:
-      "AI-powered expense tracking web app that understands natural language and categorizes expenses using Gemini API.",
-    technologies: ["Next.js", "TailwindCSS", "Gemini API"],
+      "A full-stack agricultural marketplace connecting farmers directly with buyers, eliminating intermediaries. Built with secure authentication, product listings, and order management through RESTful APIs.",
+    technologies: ["React", "Node.js", "Express", "MongoDB"],
     github: "",
     demo: "",
+    highlight: "Built in Binary Hackathon 2025",
   },
   {
     id: "project_02",
-    title: "E-Commerce Store",
+    title: "Plutoploy",
     description:
-      "Full-featured e-commerce web app with cart, wishlist, authentication and secure payments.",
-    technologies: ["React", "Redux", "Node.js", "MongoDB"],
+      "A Vercel-like cloud deployment platform that automates application builds and production deployments from GitHub repositories. Features real-time monitoring via SSE & WebSockets, isolated Podman containers with Caddy reverse proxy.",
+    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "GitHub Actions"],
     github: "",
     demo: "",
-  },
-  {
-    id: "project_03",
-    title: "Music Player App",
-    description:
-      "Android music player with playlist, seekbar, media controls and offline support.",
-    technologies: ["Java", "Android", "Room", "Retrofit"],
-    github: "",
-    demo: "",
+    highlight: "Cloud-Based Deployment Platform",
   },
 ];
 
-export const experience = [
+export const education = [
   {
-    period: "2024 — Present",
-    role: "Freelance Developer",
-    company: "",
-    description:
-      "Building modern web applications and mobile apps for clients worldwide.",
+    period: "2024 — 2026",
+    degree: "Master of Computer Application",
+    institution: "Kalyani Government Engineering College",
+    score: "CGPA: 7.92 / 10.0",
+    icon: FiBookOpen,
   },
   {
-    period: "2023 — 2024",
-    role: "Full Stack Developer Intern",
-    company: "XYZ Corp",
-    description:
-      "Worked on real-world projects, REST APIs, and optimized frontend performance.",
+    period: "2021 — 2024",
+    degree: "Bachelor of Computer Application",
+    institution: "Mahishadal Raj College",
+    score: "72.19%",
+    icon: FiBookOpen,
   },
   {
-    period: "2022 — 2023",
-    role: "Android Developer Intern",
-    company: "ABC Apps",
-    description:
-      "Developed Android applications, integrated APIs and improved app performance.",
+    period: "2021",
+    degree: "Class 12th (WBSCTE&SD)",
+    institution: "",
+    score: "67.4%",
+    icon: FiFileText,
+  },
+  {
+    period: "2019",
+    degree: "Class 10th (WBBSE)",
+    institution: "",
+    score: "53.4%",
+    icon: FiFileText,
   },
 ];
+
+export const experienceMessages = {
+  title: "Experience",
+  status: "Loading...",
+  lines: [
+    "Give me a chance, I'll turn it into experience.",
+    "Give me enough experience, and who knows where it’ll take me.",
+  ],
+};
 
 export const contactInfo = {
   heading: "LET'S BUILD SOMETHING",
