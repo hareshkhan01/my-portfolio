@@ -45,10 +45,11 @@ const Hero = () => {
           </div>
 
           {/* Right: Hero Image */}
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.7, duration: 0.8 }} className="flex-shrink-0 w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 relative">
-            <div className="absolute inset-0 border border-matrix-border rounded-sm overflow-hidden glow-box">
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.7, duration: 0.8 }} className="flex-shrink-0 w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 relative hero-glitch-container">
+            <div className="absolute inset-0 border border-matrix-border rounded-sm overflow-hidden glow-box hero-glitch">
               <img src={heroImg} alt="Cyberpunk developer silhouette with neon green digital accents" className="w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-matrix-bg/80 via-transparent to-transparent" />
+              <div className="hero-glitch-scan" />
             </div>
           </motion.div>
         </div>
