@@ -1,6 +1,15 @@
 import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiHome, FiUser, FiCode, FiFolder, FiBriefcase, FiSend } from "react-icons/fi";
 import { navItems } from "../data/portfolio";
+
+const iconMap = {
+  home: FiHome,
+  about: FiUser,
+  skills: FiCode,
+  projects: FiFolder,
+  experience: FiBriefcase,
+  contact: FiSend,
+};
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,13 +40,17 @@ const MobileNav = () => {
         <div className="bg-matrix-surface/95 backdrop-blur-md border-b border-matrix-border">
           <nav aria-label="Mobile navigation">
             <ul className="py-2">
-              {navItems.map((item) => (
-                <li key={item.id}>
-                  <a href={item.href} onClick={(e) => handleNavClick(e, item.href)} className="block px-6 py-3 text-xs tracking-wider text-matrix-text-muted hover:text-matrix-primary hover:bg-matrix-glow/30 transition-all">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
+              {navItems.map((item) => {
+                const Icon = iconMap[item.id];
+                return (
+                  <li key={item.id}>
+                    <a href={item.href} onClick={(e) => handleNavClick(e, item.href)} className="flex items-center gap-3 px-6 py-3 text-xs tracking-wider text-matrix-text-muted hover:text-matrix-primary hover:bg-matrix-glow/30 transition-all">
+                      {Icon && <Icon size={14} className="text-matrix-muted" />}
+                      {item.label}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </div>
