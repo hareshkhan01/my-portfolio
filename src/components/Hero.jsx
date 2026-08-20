@@ -11,9 +11,9 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex flex-col relative overflow-hidden">
+    <section id="home" className="min-h-[calc(100dvh-3rem)] lg:min-h-[calc(100dvh-3.5rem)] flex flex-col relative overflow-hidden">
       {/* Hero Content */}
-      <div className="flex-1 flex items-center justify-center px-4 md:px-8 lg:px-12 py-12 lg:py-0">
+      <div className="flex-1 flex items-center justify-center px-4 md:px-8 lg:px-12 py-6 lg:py-0">
         <div className="w-full max-w-6xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Left: Text */}
           <div className="flex-1 text-center lg:text-left">
@@ -56,10 +56,17 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8, duration: 0.5 }} className="flex flex-col items-center pb-6 gap-1">
-        <span className="text-[10px] text-matrix-text-muted tracking-widest">SCROLL</span>
-        <FiChevronDown size={14} className="text-matrix-muted animate-bounce" />
-      </motion.div>
+      <motion.a
+        href="#about"
+        onClick={(e) => handleScroll(e, "#about")}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 0.5 }}
+        className="absolute bottom-3 left-0 right-0 z-10 flex flex-col items-center gap-1 cursor-pointer group"
+      >
+        <span className="text-[10px] text-matrix-text-muted tracking-widest group-hover:text-matrix-primary transition-colors">SCROLL</span>
+        <FiChevronDown size={14} className="text-matrix-muted group-hover:text-matrix-primary animate-bounce transition-colors" />
+      </motion.a>
     </section>
   );
 };

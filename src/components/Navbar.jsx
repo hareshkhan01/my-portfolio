@@ -38,13 +38,13 @@ const Navbar = () => {
 
   return (
     <header
-      className={`hidden lg:block sticky top-0 z-50 transition-all duration-300 ${
+      className={`hidden lg:block sticky top-0 z-50 h-14 transition-all duration-300 ${
         scrolled
           ? "bg-matrix-surface/90 backdrop-blur-md border-b border-matrix-border shadow-[0_1px_12px_rgba(57,255,20,0.05)]"
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <nav className="flex items-center justify-between px-6 py-3" aria-label="Main navigation">
+      <nav className="flex items-center justify-between px-6 h-full" aria-label="Main navigation">
         {/* Left: Brand */}
         <div className="flex items-center gap-3 flex-shrink-0">
           <span className="text-matrix-primary font-bold text-sm tracking-wider glow-text">
