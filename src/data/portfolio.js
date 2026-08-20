@@ -66,7 +66,7 @@ export const aboutData = {
     { icon: FiMapPin, label: "LOCATION", value: "Kolkata, West Bengal, India" },
     { icon: FiCalendar, label: "BIRTHDAY", value: "12 September 2003" },
     { icon: FiCode, label: "LANGUAGES", value: "Java, JavaScript, SQL, HTML/CSS" },
-    { icon: FiCoffee, label: "CURRENT FOCUS", value: "Building cool products" },
+    { icon: FiCoffee, label: "CURRENT FOCUS", value: "Building cool projects" },
     { icon: FiTerminal, label: "STATUS", value: "Always learning..." },
   ],
 };
