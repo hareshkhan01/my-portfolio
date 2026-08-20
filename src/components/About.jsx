@@ -21,7 +21,7 @@ const About = () => {
             <div className="w-48 h-56 md:w-56 md:h-64 border border-matrix-border rounded-sm overflow-hidden glow-box relative">
               <img
                 src={heroImg}
-                alt="Developer portrait"
+                alt="Haresh Khan"
                 className="w-full h-full object-cover "
                 loading="lazy"
               />
