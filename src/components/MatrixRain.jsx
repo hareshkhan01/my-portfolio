@@ -16,7 +16,7 @@ const MatrixRain = () => {
     if (reducedMotion) return;
 
     const chars =
-      "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      "こんにちはわたしははれしゅですぷろぐらまーですあたらしいぎじゅつをべんきょうすることがすきですまいにちあたらしいことをまなんでじぶんのちからをのばしたいです8967740629ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     const fontSize = 14;
     const trailLength = 12;
