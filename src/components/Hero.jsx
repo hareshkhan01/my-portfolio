@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FiChevronDown, FiDownload } from "react-icons/fi";
 import { personalInfo } from "../data/portfolio";
-import heroImg from "../assets/my-matrix-image.png";
+import heroImg from "../assets/my-matrix-image.webp";
 
 const Hero = () => {
   const handleScroll = (e, href) => {

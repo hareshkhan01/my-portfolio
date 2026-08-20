@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { aboutData } from "../data/portfolio";
-import heroImg from "../assets/my-matrix-image.png";
+import aboutImg from "../assets/my-matrix-image.webp";
 
 const About = () => {
   return (
@@ -20,7 +20,7 @@ const About = () => {
           >
             <div className="w-48 h-56 md:w-56 md:h-64 border border-matrix-border rounded-sm overflow-hidden glow-box relative">
               <img
-                src={heroImg}
+                src={aboutImg}
                 alt="Haresh Khan"
                 className="w-full h-full object-cover "
                 loading="lazy"
