@@ -129,7 +129,7 @@ export const education = [
   },
   {
     period: "2021",
-    degree: "Class 12th (WBSCTE&SD)",
+    degree: "Class 12th (WBSCTVE&SD)",
     institution: "",
     score: "67.4%",
     icon: FiFileText,
